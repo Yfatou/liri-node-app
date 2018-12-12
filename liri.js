@@ -1,11 +1,14 @@
 //code to read and set any environment variables with the dotenv package
 require("dotenv").config();
 
+//Spotify package
+var Spotify = require('node-spotify-api');
+
 //Code required to import the key.js
 //var spotify = new Spotify(keys.spotify);
 
 //Bands in town node package
-const bandsintown = require("bandsintown");
+//const bandsintown = require("bandsintown");
 
 //Axios package
 const axios = require("axios");
@@ -48,18 +51,23 @@ function concert() {
     .get(queryUrl)
     .then(function(response){
         console.log("\n***************");
-        //for (var i = 0; i < data.length; i++){
-            //console.log("Venue: " + response.data[i].venue.name);
-
-            console.log("Venue: " + response.data[0].venue.name);
-            console.log("Location: " + response.data[0].venue.country + ", " + response.data[0].venue.city);
-            //Put the date in then format we want MM/DD/YYYY
-            let eventDate = moment(response.data[0].datetime).format("MM/DD/YYYY");
+        for (var i = 0; i < response.data.length; i++) {
+            console.log("Venue: " + response.data[i].venue.name);
+            console.log("Location: " + response.data[i].venue.country + ", " + response.data[i].venue.city);
+            //Put the date to the right format
+            let eventDate = moment(response.data[i].datetime).format("MM/DD/YYYY");
             console.log("Date: " + eventDate);
-        //}
+            console.log("\n***************");
+        }
        
     });
 }
+
+//If the spotifyThisSong function is called
+function spotifyThisSong() {
+
+}
+
 
 //If the movieThis function is called
 function movieThis() {
