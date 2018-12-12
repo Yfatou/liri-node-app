@@ -10,6 +10,9 @@ const bandsintown = require("bandsintown");
 //Axios package
 const axios = require("axios");
 
+//Moment package
+const moment = require('moment');
+
 //var Events = new BandsInTownEvents;
 
 //store the arguments entered by the user
@@ -33,42 +36,30 @@ switch(request) {
 }
 
 
-// Events.setParams({
-//     "app_id":"codingbootcamp", //can be anything
-//     "artists":[ //accepts string for single artist or an array of artist names
-//       "Wilco",
-//       "Yeah Yeah Yeahs"
-//     ]
-//   });
-   
-  //get your events with success and error callbacks
-//   Events.getEvents(function( events ){
-//     for(var i = 0; i < events.length; i++){
-//       console.log( events[i].venue.city + ", " + events[i].venue.region );
-//     }
-//   },function( errors ){
-//     console.log(errors);
-//   });
-
-
 //If the concert function is called
-// function concert() {
+function concert() {
 
-//     //Request to the Bands in town API
-//     let queryUrl = `https://rest.bandsintown.com/artists/${artistBandName}/events?app_id=codingbootcamp`;
+    //Request to the Bands in town API
+    let queryUrl = `https://rest.bandsintown.com/artists/${search}/events?app_id=codingbootcamp`;
 
-//     console.log(queryUrl);
-//     //SHOULD USE AXIOS.GET(QUERYURL)
-//     bandsintown
-//         //.getArtistEventList(artistBandName)
-//         .getArtistEventList(queryUrl)
-//         //.get(queryUrl)
-//         .then(function(response){
-//             let venueName = response.data.venue.name;
-//             console.log("Venue name: " + venueName);
-//         });
+    console.log(queryUrl);
+   
+    axios
+    .get(queryUrl)
+    .then(function(response){
+        console.log("\n***************");
+        //for (var i = 0; i < data.length; i++){
+            //console.log("Venue: " + response.data[i].venue.name);
 
-// }
+            console.log("Venue: " + response.data[0].venue.name);
+            console.log("Location: " + response.data[0].venue.country + ", " + response.data[0].venue.city);
+            //Put the date in then format we want MM/DD/YYYY
+            let eventDate = moment(response.data[0].datetime).format("MM/DD/YYYY");
+            console.log("Date: " + eventDate);
+        //}
+       
+    });
+}
 
 //If the movieThis function is called
 function movieThis() {
