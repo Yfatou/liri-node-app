@@ -19,6 +19,8 @@ const moment = require("moment");
 //fs package
 const fs = require("fs");
 
+var cmd = require("node-cmd");
+
 //store the arguments entered by the user
 const request = process.argv[2];
 var search = process.argv.slice(3).join(" ");
@@ -51,7 +53,7 @@ switch(request) {
 function addRequest() {
     fs.appendFile("log.txt", textLog, function(err){
         if (err) {
-            console.log(err);
+            return console.log(err);
         } 
     });
 };
@@ -90,7 +92,7 @@ function spotifyThisSong() {
     //     spotify
     //     .search ({ type: 'track', query: search, limit: 5}, function(err, data) {
     //         if (err) {
-    //             console.log(err);
+    //             return console.log(err);
     //         }
 
     //         //song data from the API
@@ -104,7 +106,7 @@ function spotifyThisSong() {
         spotify
         .search ({ type: 'track', query: search, limit: 5}, function(err, data) {
             if (err) {
-                console.log(err);
+                return console.log(err);
             }
         console.log(search);
         //song data from the API
@@ -160,7 +162,22 @@ function movieThis() {
 
 //If the doWIS function is called
 function doWIS() {
+    fs.readFile("random.txt", "utf8", function(error, data){
 
+        if (error) {
+            return console.log(error);
+        }
+
+        console.log(data);
+
+        let randomArr = data.split(",");
+
+        console.log(randomArr);
+        var command = randomArr[0];
+        var song = randomArr[1];
+
+        cmd.run("node liri.js " + command + " " + song);
+    });
 }
 
 //Function to check if one of the data we want to display is non-existent
