@@ -66,3 +66,7 @@ Since it is a command line app, liri can't be deployed but you can still use it.
         The app will read the random.txt file using the fs package of node and *do what it says*
 
 All the command entered by the user are appended in the *log.txt* file
+
+##Screenshots
+
+![](movie-this.gif)
