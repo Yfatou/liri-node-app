@@ -70,3 +70,8 @@ All the command entered by the user are appended in the *log.txt* file
 ##Screenshots
 
 ![](movie-this.gif)
+![](spotify.gif)
+![](spotify2.gif)
+![](concert-this.gif)
+![](concert-this2.gif)
+
