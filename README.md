@@ -45,7 +45,7 @@ Since it is a command line app, liri can't be deployed but you can still use it.
     ![](concert-this.gif)
     ![](concert-this2.gif)
 
-    If the user type an artist or band that doesn't have a scheduled concert, a message will be show.
+    If the user type an artist or band that doesn't have a scheduled concert, a message will be shown.
     Also, if the user doesn't type an artist or a band name, a message is shown: 
 
     ![](concert-this3.gif)
@@ -90,7 +90,7 @@ Since it is a command line app, liri can't be deployed but you can still use it.
 
     ![](DWIS.gif)
 
-All the command entered by the user are appended in the *log.txt* file
+All the commands entered by the user are appended in the *log.txt* file
 
 
 
