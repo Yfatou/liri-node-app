@@ -21,7 +21,7 @@ Once the data is retrieved, the selected informations are displayed.
 Since it is a command line app, liri can't be deployed but you can still use it. To do so, the following steps will be necessary: 
  1. Follow the link to the gitHup repository, copy and clone it on your computer
  2. Create your own ".env" file where you will put your Sptify API key like this:
-    # Spotify API keys
+    Spotify API keys
 
     SPOTIFY_ID=your-spotify-id
     SPOTIFY_SECRET=your-spotify-secret
@@ -66,3 +66,7 @@ Since it is a command line app, liri can't be deployed but you can still use it.
         The app will read the random.txt file using the fs package of node and *do what it says*
 
 All the command entered by the user are appended in the *log.txt* file
+
+##Screenshots
+
+![](movie-this.gif)
