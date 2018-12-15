@@ -39,7 +39,7 @@ Since it is a command line app, liri can't be deployed but you can still use it.
     *  __node liri.js concert-this *< name of an artist or a band >*__ 
         The informations below will be displayed: 
         - name of the artist/band
-        - name of teh venue
+        - name of the venue
         - date of the event
 
     ![](concert-this.gif)
