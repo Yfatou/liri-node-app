@@ -74,4 +74,6 @@ All the command entered by the user are appended in the *log.txt* file
 ![](spotify2.gif)
 ![](concert-this.gif)
 ![](concert-this2.gif)
+![](DWIS.gif)
+
 
