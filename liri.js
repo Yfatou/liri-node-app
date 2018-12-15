@@ -19,7 +19,8 @@ const moment = require("moment");
 //fs package
 const fs = require("fs");
 
-var cmd = require("node-cmd");
+//Node command line package
+const cmd = require("node-command-line");
 
 //store the arguments entered by the user
 const request = process.argv[2];
@@ -170,12 +171,14 @@ function doWIS() {
 
         console.log(data);
 
+        //The data in the random.txt file is put in an array with the coma as a separator 
+        //for the indexes
         let randomArr = data.split(",");
 
         console.log(randomArr);
         var command = randomArr[0];
         var song = randomArr[1];
-
+        //We run the node command with the parameter in the random.txt file
         cmd.run("node liri.js " + command + " " + song);
     });
 }
